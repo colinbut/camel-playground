@@ -5,8 +5,9 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 
 /**
- * Hello world!
+ * Application
  *
+ * @author colin
  */
 public class App {
 
