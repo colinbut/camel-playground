@@ -1,4 +1,4 @@
-package com.mycompany.camel;
+package com.mycompany.camel.filecopy;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.builder.RouteBuilder;
