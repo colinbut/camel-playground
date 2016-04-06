@@ -5,11 +5,11 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.impl.DefaultCamelContext;
 
 /**
- * Application
+ * File Copy example
  *
  * @author colin
  */
-public class App {
+public class FilyCopyExample {
 
     /**
      * Main method
