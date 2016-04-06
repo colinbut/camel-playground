@@ -23,6 +23,7 @@ public class TimerRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
         logger.info("Configuring the route");
         from("timer://timer1?period=1000")
-                .process(new TimerProcessor());
+                .to("bean:defaultTimeProcessor")
+                .to("bean:simpleTimeProcessor");
     }
 }

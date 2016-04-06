@@ -10,9 +10,9 @@ import org.apache.camel.Processor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TimerProcessor implements Processor {
+public class DefaultTimerProcessor implements Processor {
 
-    private static final Logger logger = LoggerFactory.getLogger(TimerProcessor.class);
+    private static final Logger logger = LoggerFactory.getLogger(DefaultTimerProcessor.class);
 
     /**
      * {@inheritDoc}
