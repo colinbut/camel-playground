@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <!-- The JMS queue (ActiveMQ) defined by connection factory -->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="vm://localhost?broker.persistent=false"/>
+    </bean>
+
+    <!-- Camel Component -->
+    <bean id="activemq" class="org.apache.activemq.camel.component.ActiveMQComponent">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+
+    <!-- build the route -->
+    <!-- From Queue > Bean > System Out -->
+    <camelContext xmlns="http://camel.apache.org/schema/spring">
+        <route>
+            <from uri="activemq:queue:test.queue"/>
+            <to uri="bean:myBean?method=appendCamel"/>
+            <to uri="stream:out"/>
+        </route>
+    </camelContext>
+
+
+    <bean id="myBean" class="com.mycompany.camel.helloworld.xml.MyBean" />
+
+</beans>
