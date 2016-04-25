@@ -11,9 +11,11 @@
 *.iml
 
 
+
 .settings/*
 .idea/*
-target/* 
+target/*
+activemq-data/*
 
 # Packages #
 ############
